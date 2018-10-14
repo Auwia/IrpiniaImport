@@ -1,0 +1,92 @@
+﻿/*!
+ * Massimo Manganiello 16/06/2017
+ *
+ */
+.table td.tdRight {
+  text-align: right;
+}
+.table td.tdCenter {
+  text-align: center;
+}
+.table-nonfluid {
+   width: auto;
+}
+
+.header-wrap {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+ ul {
+    margin: 0;
+    padding: 0;
+}
+
+ .logo-link {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+
+ #logo {
+    border:0;
+    margin: 0;
+}
+ .language-switch {
+    display: block;
+    position: absolute;
+    right: 485px;
+    top: 20px;
+    font-family: verdana,arial,helvetica,geneva,sans-serif;
+    font-size: 12px;
+
+}
+ .language-switch li {
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
+
+ .language-switch li a {
+    color: #CE1B22 !important;
+    font-size: 11px;
+    text-decoration: none;
+    font-weight: bold;
+}
+ .language-switch li a.sep:after {
+    content: " | ";
+}
+ .signin-signup {
+    display: block;
+    float: right;
+    list-style: none outside none;
+}
+ .signin-signup li {
+    float: left;
+    font-size: 14px;
+}
+ .signin-signup li a {
+    color: #000 !important;
+    display: block;
+    padding: 17px;
+    text-decoration: none;
+}
+
+ .signin-signup li a:hover {
+    background-color: #e9e9e9 !important;
+    color: #000 !important;
+    text-decoration: none;
+}
+
+#logo2 {
+    display:inline-block;
+	margin-right:50px;
+}
+
+#registra {
+    display:inline-block;
+}

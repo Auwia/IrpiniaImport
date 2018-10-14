@@ -1,0 +1,24 @@
+<h1>{{'hi' | translate}} {{vm.user.firstName}}!</h1>
+<p>{{'loggedIn' | translate}}</p>
+<h3>All registered users:</h3>
+<ul>
+    <li ng-repeat="user in vm.allUsers">
+        ({{user.firstName}} {{user.lastName}} {{user.email}})
+        - <a ng-click="vm.deleteUser(user.email)">{{'delete' | translate}}</a>
+    </li>
+</ul>
+
+<div>
+	{{'Picture' | translate}}<input type="text" name="picture" value="{{vm.user.picture}}" ng-model="vm.user.picture"><br>
+	{{'firstName' | translate}}<input type="text" name="first_name" value="{{vm.user.firstName}}" ng-model="vm.user.firstName"><br>
+	{{'lastName' | translate}}<input type="text" name="last_name" value="{{vm.user.lastName}}" ng-model="vm.user.lastName" ><br>
+	{{'street' | translate}}<input type="text" name="street" value="{{vm.user.street}}" ng-model="vm.user.street" ><br>
+	{{'ort' | translate}}<input type="text" name="ort" value="{{vm.user.ort}}" ng-model="vm.user.ort" ><br>
+	{{'place' | translate}}<input type="text" name="place" value="{{vm.user.place}}" ng-model="vm.user.place" ><br>
+	{{'telephone' | translate}}<input type="text" name="telephone" value="{{vm.user.telephone}}" ng-model="vm.user.telephone" ><br>
+	{{'email' | translate}}<input type="text" name="email" value="{{vm.user.email}}" ng-model="vm.user.email" ><br>
+</div>
+
+<p>&nbsp;</p>
+<span><a href="#!/login" class="btn btn-primary">{{'logout' | translate}}</a></span>
+<span><a class="btn btn-primary" ng-click="vm.updateCurrentUser(vm.user)">{{'update' | translate}}</a></span>

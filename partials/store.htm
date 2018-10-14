@@ -1,0 +1,41 @@
+﻿<p class="text-info">
+    {{'Thanks' | translate}}
+</p>
+
+<p>
+    {{'search' | translate}}: <input ng-model="search">
+</p>
+
+<table class="table table-bordered">
+    <tr class="well">
+        <td class="tdRight" colspan="4" >
+            <a href="index.html#/cart" title="go to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+                <i class="icon-shopping-cart" />
+                <b>{{cart.getTotalCount()}}</b> {{'items' | translate}}, <b>{{cart.getTotalPrice() | currency}}</b>
+            </a>
+        </td>
+    </tr>
+    <tr ng-repeat="product in store.products | orderBy:'title' | filter:search" >
+        <td class="tdCenter"><img ng-src="{{product.image}}" alt="{{product.title}}" style="width:50px;height:50px;" /></td>
+        <td>
+            <a href="#/products/{{product.id}}"><b>{{product.title}}</b></a><br />
+            {{product.description}}
+        </td>
+        <td class="tdRight">
+            {{product.price | currency}}
+        </td>
+        <td class="tdCenter">
+            <a href="" ng-click="cart.addItem(product.id, product.title, product.price, 1)">
+                {{'addCart' | translate}}
+            </a>
+        </td>
+    </tr>
+    <tr class="well">
+        <td class="tdRight" colspan="4">
+            <a href="index.html#/cart" title="go to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+                <i class="icon-shopping-cart" />
+                <b>{{cart.getTotalCount()}}</b> {{'items' | translate}}, <b>{{cart.getTotalPrice() | currency}}</b>
+            </a>
+        </td>
+    </tr>
+</table>

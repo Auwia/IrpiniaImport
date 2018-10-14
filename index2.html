@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="appLog">
+<head>
+    <meta charset="utf-8" />
+    <title>{{'title' | translate}}</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link href="app-content/app.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<script>
+		var loc = window.location.href+'';
+		if (loc.indexOf('http://')==0){
+			window.location.href = loc.replace('http://','https://');
+		}
+	</script>
+
+	<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+	
+	<script src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.6.4/angular-route.min.js"></script>
+	<script src="https://code.angularjs.org/1.6.4/angular-cookies.min.js"></script>
+	<script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+
+	<script data-require="angular.js@1.3.8" data-semver="1.3.8" src="https://code.angularjs.org/1.3.8/angular.js"></script>
+	<script data-require="angular-translate@*" data-semver="2.5.0" src="https://cdn.rawgit.com/angular-translate/bower-angular-translate/2.5.0/angular-translate.js"></script>
+	
+	<script src="appLog.js"></script>
+	
+	<meta http-equiv="Cache-control" content="no-cache" />
+	<meta name="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	
+</head>
+<body>				  
+    <div class="jumbotron" ng-controller="translateController">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+				<ul class="language-switch">
+		<li>
+			<a href="" title="tedesco" class="sep" ng-click="changeLanguage('de')">
+				<font>de</font>
+			</a>
+		</li>
+		<li>
+			<a href="" title="inglese" class="sep" ng-click="changeLanguage('en')">
+				<font>en</font>
+			</a>
+		</li>
+		<li>
+			<a href="" title="francese" class="sep" ng-click="changeLanguage('fr')">
+				<font>fr</font>
+			</a>
+		</li>
+		<li>
+			<a href="" title="portuguese" class="sep" ng-click="changeLanguage('pt')">
+				<font>pt</font>
+			</a>
+		</li>
+		<li>
+			<a href="" title="italiano" ng-click="changeLanguage('it')">
+				<font>it</font>
+			</a>
+		</li>
+	</ul>
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+    <script src="app-services/authentication.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
+	<script src="app-services/user.service.js"></script>
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="register/register.controller.js"></script>
+	<div class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+	
+</body>
+</html>
